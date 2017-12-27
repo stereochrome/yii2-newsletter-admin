@@ -1,0 +1,29 @@
+{
+	"name": "stereochrome/yii2-newsletter-admin",
+	"description": "Newsletter administration module for yii2.",
+	"keywords": ["yii2", "framework", "newsletter"],
+	"homepage": "https://github.com/stereochrome/",
+	"type": "yii2-extension",
+	"license": "BSD-3-Clause",
+	"support": {
+		
+	},
+	"require": {
+		"php": ">=5.7",
+	},
+	"require-dev": {
+	},
+	"autoload": {
+		"psr-4": {
+			"Stereochrome\\NewsletterAdmin\\": "./src/NewsletterAdmin"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Stereochrome\\NewsletterAdmin\\": "./src/NewsletterAdmin"
+		}
+	},
+    "extra": {
+       	"bootstrap": "Stereochrome\\NewsletterAdmin\\Bootstrap"
+   	}
+}
