@@ -9,7 +9,11 @@
 		
 	},
 	"require": {
-		"php": ">=5.7"
+		"php": ">=5.7",
+		"yiisoft/yii2": "~2.0.13",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+		"2amigos/yii2-usuario": "~1.0",
+		"stereochrome/sendy": "dev-master"
 	},
 	"require-dev": {
 	},
@@ -25,5 +29,11 @@
 	},
     "extra": {
        	"bootstrap": "Stereochrome\\NewsletterAdmin\\Bootstrap"
-   	}
+   	},
+   	"repositories": [
+   		{
+            "type": "git",
+            "url": "https://github.com/stereochrome/yii2-sendy-api"
+        }
+   	],
 }
