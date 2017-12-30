@@ -29,5 +29,5 @@
 	},
     "extra": {
        	"bootstrap": "Stereochrome\\NewsletterAdmin\\Bootstrap"
-   	},
+   	}
 }
