@@ -13,7 +13,7 @@
 		"yiisoft/yii2": "~2.0.13",
         "yiisoft/yii2-bootstrap": "~2.0.0",
 		"2amigos/yii2-usuario": "~1.0",
-		"stereochrome/sendy": "*"
+		"stereochrome/yii2-sendy-api": "*"
 	},
 	"require-dev": {
 	},
