@@ -25,6 +25,8 @@ class Module extends \yii\base\Module
 
     public $enableFlashMessages = true;
 
+    public $sendyComponentName = "sendy";
+
     public function init() {
 
     } 

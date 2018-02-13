@@ -41,8 +41,13 @@ $user = \Yii::$app->user;
 			<?php
 				if(isset($mainActions) and count($mainActions) > 0) {
 
+
 					foreach($mainActions as $action) {
+						if(!isset($action['options'])) {
+							$action['options'] = ['class' => 'btn btn-primary'];
+						}
 						echo Html::a($action['label'], $action['url'], $action['options']);
+						echo " ";
 					}
 
 				}

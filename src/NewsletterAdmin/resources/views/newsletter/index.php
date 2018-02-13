@@ -22,8 +22,16 @@ $mainActions = [
 <?php $this->beginContent('@Stereochrome/NewsletterAdmin/resources/views/shared/admin_layout.php', ['mainActions' => $mainActions]) ?>
 
 
-
+<div class="clearfix"></div>
 <?php Pjax::begin() ?>
+
+<?= $this->render(
+    '@Da/User/resources/views/shared/_alert',
+    [
+        'module' => Yii::$app->getModule('newsletter-admin'),
+    ]
+) ?>
+
 
 <?= GridView::widget(
     [
@@ -39,6 +47,13 @@ $mainActions = [
             		return $model->newsletterTemplate->name;
             	},
             	'filter' => false,
+            ],
+            [
+                'attribute' => 'newsletter_list_id',
+                'value' => function($model) {
+                    return $model->newsletterList->title;
+                },
+                'filter' => false,
             ],
             [
                 'header' => Yii::t('newsletter-admin', 'Sent'),
@@ -107,7 +122,7 @@ $mainActions = [
             ],
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{update} {delete}',
+                'template' => '{view} {update} {delete}',
             ],
         ],
     ]

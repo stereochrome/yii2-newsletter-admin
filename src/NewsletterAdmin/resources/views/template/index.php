@@ -38,22 +38,16 @@ $mainActions = [
             [
                 'attribute' => 'updated_at',
                 'value' => function ($model) {
-                    if (extension_loaded('intl')) {
-                        return Yii::t('newsletter-admin', '{0, date, MMMM dd, YYYY HH:mm}', [$model->created_at]);
-                    }
-
-                    return date('Y-m-d G:i:s', $model->created_at);
+                    return Yii::t('newsletter-admin', '{0, date, MMMM dd, YYYY HH:mm}', [$model->updated_at]);
                 },
+                'filter' => false,
             ],
             [
-                'attribute' => 'updated_at',
+                'attribute' => 'created_at',
                 'value' => function ($model) {
-                    if (extension_loaded('intl')) {
-                        return Yii::t('newsletter-admin', '{0, date, MMMM dd, YYYY HH:mm}', [$model->updated_at]);
-                    }
-
-                    return date('Y-m-d G:i:s', $model->updated_at);
+                    return Yii::t('newsletter-admin', '{0, date, MMMM dd, YYYY HH:mm}', [$model->created_at]);
                 },
+                'filter' => false,
             ],
             [
                 'class' => 'yii\grid\ActionColumn',

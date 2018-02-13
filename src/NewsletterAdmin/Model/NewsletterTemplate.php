@@ -87,6 +87,13 @@ class NewsletterTemplate extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getTemplateObject() {
+
+        $identifier = $this->identifier;
+
+        return \Yii::$app->$identifier;
+    }
+
 
     /**
      * @return \yii\db\ActiveQuery

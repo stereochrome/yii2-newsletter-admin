@@ -18,6 +18,7 @@ class m100000_000100_add_newsletter_table extends Migration
             '{{%newsletter}}',
             [
                 'id' => $this->primaryKey(),
+                'title' => $this->string(255)->notNull(),
                 'subject' => $this->string(1500)->notNull(),
                 'newsletter_template_id' => $this->integer()->notNull(),
                 'newsletter_list_id' => $this->integer()->notNull(),

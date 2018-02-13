@@ -6,10 +6,12 @@ use Stereochrome\NewsletterAdmin\Query\NewsletterQuery;
 use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\ArrayHelper;
 /**
  * This is the model class for table "{{%newsletter}}".
  *
  * @property int $id
+ * @property string $title
  * @property string $subject
  * @property int $newsletter_template_id
  * @property int $newsletter_list_id
@@ -54,6 +56,7 @@ class Newsletter extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('newsletter-admin', 'ID'),
             'subject' => Yii::t('newsletter-admin', 'Subject'),
+            'title' => Yii::t('newsletter-admin', 'Title'),
             'newsletter_template_id' => Yii::t('newsletter-admin', 'Template'),
             'newsletter_list_id' => Yii::t('newsletter-admin', 'List'),
             'sent' => Yii::t('newsletter-admin', 'Sent'),
@@ -71,8 +74,8 @@ class Newsletter extends \yii\db\ActiveRecord
         return ArrayHelper::merge(
             parent::scenarios(),
             [
-                'create' => ['subject', 'newsletter_template_id', 'newsletter_list_id'],
-                'update' => ['subject', 'newsletter_list_id'],
+                'create' => ['title', 'subject', 'newsletter_template_id', 'newsletter_list_id'],
+                'update' => ['title', 'subject', 'newsletter_list_id'],
             ]
 
         );
@@ -86,6 +89,9 @@ class Newsletter extends \yii\db\ActiveRecord
         return [
             'subjectRequired' => [['subject'], 'required'],
             'subjectString' => [['subject'], 'string', 'max' => 1500],
+
+            'titleRequired' => [['title'], 'required'],
+            'titleString' => [['title'], 'string', 'max' => 255],
 
             'newsletterTemplateRequired' => [['newsletter_template_id'], 'required'],
             'newsletterTemplateInteger' => [['newsletter_template_id'], 'integer'],
@@ -135,3 +141,4 @@ class Newsletter extends \yii\db\ActiveRecord
         return new NewsletterQuery(get_called_class());
     }
 }
+
