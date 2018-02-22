@@ -7,7 +7,7 @@ use Da\User\Helper\MigrationHelper;
 /**
  * Class m171229_220401_add_newsletter_table
  */
-class m100000_000100_add_newsletter_table extends Migration
+class m500000_000100_add_newsletter_table extends Migration
 {
     /**
      * @inheritdoc

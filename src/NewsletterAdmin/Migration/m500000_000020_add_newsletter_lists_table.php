@@ -6,9 +6,9 @@ use yii\db\Migration;
 use Da\User\Helper\MigrationHelper;
 
 /**
- * Class m171229_220354_add_newsletter_templates_table
+ * Class m171230_204615_add_newsletter_lists_table
  */
-class m100000_000010_add_newsletter_templates_table extends Migration
+class m500000_000020_add_newsletter_lists_table extends Migration
 {
     /**
      * @inheritdoc
@@ -16,11 +16,14 @@ class m100000_000010_add_newsletter_templates_table extends Migration
     public function safeUp()
     {
         $this->createTable(
-            '{{%newsletter_template}}',
+            '{{%newsletter_list}}',
             [
                 'id' => $this->primaryKey(),
-                'name' => $this->string(255)->notNull(),
-                'identifier' => $this->string(255)->notNull(),
+                'title' => $this->string(255)->notNull(),
+                'external_id' => $this->string(65536)->null(),
+
+                'active' => $this->boolean()->notNull(),
+                
                 'created_at' => $this->integer()->notNull(),
                 'created_by' => $this->integer()->notNull(),
                 'updated_at' => $this->integer()->notNull(),
@@ -28,9 +31,7 @@ class m100000_000010_add_newsletter_templates_table extends Migration
             ],
             MigrationHelper::resolveTableOptions($this->db->driverName)
         );
-
-        $this->createIndex('idx_newsletter_template_identifier', '{{%newsletter_template}}', ['identifier'], true);
-
+        
     }
 
     /**
@@ -38,9 +39,7 @@ class m100000_000010_add_newsletter_templates_table extends Migration
      */
     public function safeDown()
     {
-    
-        $this->dropTable('{{%newsletter_template}}');
-        return true;
+        $this->dropTable("{{%newsletter_list}}");
     }
 
 }

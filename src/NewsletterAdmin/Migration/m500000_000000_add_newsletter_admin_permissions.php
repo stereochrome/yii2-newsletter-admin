@@ -6,7 +6,7 @@ use yii\db\Migration;
 /**
  * Class m171229_214522_add_newsletter_admin_permissions
  */
-class m100000_000000_add_newsletter_admin_permissions extends Migration
+class m500000_000000_add_newsletter_admin_permissions extends Migration
 {
     /**
      * @inheritdoc

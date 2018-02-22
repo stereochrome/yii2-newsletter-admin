@@ -8,7 +8,7 @@ use Da\User\Helper\MigrationHelper;
 /**
  * Class m171229_220407_add_newsletter_content_table
  */
-class m100000_000110_add_newsletter_content_table extends Migration
+class m500000_000110_add_newsletter_content_table extends Migration
 {
     
     /**
